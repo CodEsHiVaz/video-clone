@@ -1,16 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Video Clone
 
-## Getting Started
+### Live Preview <a href="https://video-clone-codeshivaz.vercel.app/">Link</a>
+## Description
 
-First, run the development server:
+This project demonstrates fetching and displaying videos from an API, implementing pagination for data retrieval, and ensuring a responsive design. When a video is clicked, it will play, and if it doesn't play, a thumbnail will be shown. The tech stack used for this project includes React.js, Tailwind CSS, and TypeScript.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
+
+- Fetch videos from an API.
+- Implement pagination for seamless data retrieval.
+- Create a responsive design for a great user experience.
+- Enable video playback with a fallback thumbnail if the video doesn't play.
+
+## Technologies Used
+
+- React.js (NextJS)
+- Tailwind CSS
+- TypeScript
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js and npm installed on your development environment.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone hhttps://github.com/CodEsHiVaz/video-clone.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd your-project
+   ```
+
+3. Install the project dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. run the development server:
+
+   ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+   ```
+
+
+## Usage
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -18,17 +64,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Upon opening the application, you will be presented with a list of videos fetched from the API.
 
-## Deploy on Vercel
+2. Use the pagination controls to navigate through the list of videos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Click on a video thumbnail to play the video. If the video doesn't play, a thumbnail image will be displayed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Credits
+
+- [Shivaji Zirpe](https://github.com/CodEsHiVaz) - Project Developer
+
+## Additional Information
+
+Add any additional information about your project here, such as future plans, known issues, or special instructions for contributors.
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
