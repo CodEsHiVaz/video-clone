@@ -8,6 +8,7 @@ type props = {
 const List = ({ post }: props) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [likes, setLikes] = useState<{ [postId: number]: number }>({});
 
   const handleVideoClick = () => {
     if (videoRef.current) {
@@ -21,7 +22,19 @@ const List = ({ post }: props) => {
       }
     }
   };
+  const handlelikeCount = () => {};
+  const handleLike = (postId: any) => {
+    // Increment like count in local storage.
+    const currentLikes = likes[postId] || 0;
+    const newLikes = currentLikes + 1;
+    localStorage.setItem(`like_${postId}`, newLikes.toString());
 
+    // Update the likes state to reflect the new like count.
+    setLikes((prevLikes) => ({
+      ...prevLikes,
+      [postId]: newLikes,
+    }));
+  };
   return (
     <>
       <div className="max-w-sm  rounded-lg overflow-hidden shadow-lg mb-4 flex flex-col  gap-3">
@@ -90,10 +103,12 @@ const List = ({ post }: props) => {
               {randomInt(1, 9)} days ago
             </span>
             <div className="flex gap-2">
-              <span className="bg-gray-100 cursor-pointer text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-full mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
+              <span
+                onClick={() => handleLike(post.postId)}
+                className="bg-gray-100 cursor-pointer text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-full mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500"
+              >
                 <i className="fa-solid fa-heart pr-2"></i> &#32;{" "}
-                {post.reaction.count}
-              </span>
+                {localStorage.getItem(`like_${post.postId}`)} </span>
 
               <span className="bg-gray-100 cursor-pointer text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-full mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
                 <i className="fa-solid fa-comment pr-2"></i> &#32;{" "}
